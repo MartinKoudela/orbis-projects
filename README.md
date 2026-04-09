@@ -42,7 +42,15 @@ cp -r resources/views/themes/template resources/views/themes/jmeno-prijmeni
 
 Složku pojmenuj podle sebe — bez diakritiky, malými písmeny, slova odděl pomlčkou (např. `jan-novak`).
 
-**Krok 2 — Vytvoř soubor s metadaty**
+**Krok 2 — Přepiš .env**
+
+V souboru .env přepiš:
+```env
+ACTIVE_AUTHOR=template // přepiš na název šablony
+```
+
+
+**Krok 3 — Vytvoř soubor s metadaty**
 
 Vytvoř soubor `public/themes/jmeno-prijmeni/meta.json`:
 
@@ -55,7 +63,7 @@ Vytvoř soubor `public/themes/jmeno-prijmeni/meta.json`:
 
 Bez tohoto souboru šablona funguje, ale nebude viditelná v přepínači témat. Pokud soubor chybí, doplní ho administrátor.
 
-**Krok 3 — Uprav `index.blade.php`**
+**Krok 4 — Uprav `index.blade.php`**
 
 Otevři `resources/views/themes/jmeno-prijmeni/index.blade.php` a uprav design dle vlastní fantazie. Celý obsah musí být uvnitř `<x-layout>`:
 
@@ -75,17 +83,17 @@ Otevři `resources/views/themes/jmeno-prijmeni/index.blade.php` a uprav design d
 
 Šablona musí zobrazovat všechny projekty, obsahovat filtry (rok, třída, typ projektu, typ práce) a odkaz na [orbiszlin.cz](https://orbiszlin.cz). Viz sekci [Dostupné proměnné](#dostupné-proměnné).
 
-**Krok 4a — Uprav `detail.blade.php`** *(klasický přístup)*
+**Krok 5a — Uprav `detail.blade.php`** *(klasický přístup)*
 
 Projekt se otevře na samostatné stránce `/themes/jmeno-prijmeni/project/{slug}`. Dostaneš proměnnou `$project` se stejnou strukturou jako položka v `$projects`.
 
-**Krok 4b — Nebo zvol vlastní řešení** *(modal, overlay, inline rozbalení...)*
+**Krok 5b — Nebo zvol vlastní řešení** *(modal, overlay, inline rozbalení...)*
 
 Místo samostatné stránky můžeš detail zobrazit libovolně přímo na stránce se seznamem — vyskakovací okno, rozbalení karty apod. Data si načteš JavaScriptem z `/api/projects/{slug}`. V takovém případě `detail.blade.php` nepotřebuješ.
 
 > Ať zvolíš jakýkoliv přístup, **každý projekt musí jít nějak rozbalit / zobrazit celý detail** — to je povinná součást šablony.
 
-**Krok 5 — Otevři v prohlížeči**
+**Krok 6 — Otevři v prohlížeči**
 
 Tvoje šablona je dostupná na:
 
