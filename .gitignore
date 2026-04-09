@@ -1,0 +1,53 @@
+*.log
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.backup
+.env.production
+
+# Dependencies
+/vendor
+/node_modules
+
+# Build
+/public/build
+/public/hot
+/public/storage
+
+# Storage
+/storage/*.key
+/storage/pail
+
+# Database
+/database/database.sqlite
+
+# Testing
+/.phpunit.cache
+.phpunit.result.cache
+
+# IDEs
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+.phpactor.json
+_ide_helper.php
+
+# AI tools
+/.agents
+/.ai
+/.claude
+/.codex
+/.cursor
+/.mcp.json
+/AGENTS.md
+/CLAUDE.md
+/boost.json
+
+# Legacy
+/auth.json
+Homestead.json
+Homestead.yaml
