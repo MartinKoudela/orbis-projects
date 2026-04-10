@@ -37,7 +37,7 @@ class WorkTypeResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('type', TaxonomyType::WorkType);
+        return parent::getEloquentQuery()->where('type', TaxonomyType::WORK_TYPE);
     }
 
     public static function form(Schema $schema): Schema

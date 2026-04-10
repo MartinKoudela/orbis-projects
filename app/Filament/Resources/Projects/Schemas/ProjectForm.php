@@ -57,7 +57,7 @@ class ProjectForm
                         Select::make('taxonomies')
                             ->label('Ročník')
                             ->multiple()
-                            ->relationship('taxonomies', 'name', fn($query) => $query->where('type', TaxonomyType::Year))
+                            ->relationship('taxonomies', 'name', fn($query) => $query->where('type', TaxonomyType::YEAR))
                             ->preload(),
                         Select::make('school_year')
                             ->label('Školní rok')
@@ -78,7 +78,7 @@ class ProjectForm
                         Select::make('work_types')
                             ->label('Typ práce')
                             ->multiple()
-                            ->relationship('taxonomies', 'name', fn($query) => $query->where('type', TaxonomyType::WorkType))
+                            ->relationship('taxonomies', 'name', fn($query) => $query->where('type', TaxonomyType::WORK_TYPE))
                             ->preload(),
                     ])
                     ->columns(4),
@@ -131,7 +131,7 @@ class ProjectForm
                         Select::make('school_class')
                             ->label('Třída')
                             ->multiple()
-                            ->relationship('taxonomies', 'name', fn($query) => $query->where('type', TaxonomyType::SchoolClass))
+                            ->relationship('taxonomies', 'name', fn($query) => $query->where('type', TaxonomyType::SCHOOL_CLASS))
                             ->preload(),
                         TextInput::make('author_email')
                             ->label('E-mail autora')

@@ -12,7 +12,7 @@ class ProjectsByClass extends ChartWidget
 
     protected function getData(): array
     {
-        $classes = Taxonomy::where('type', TaxonomyType::SchoolClass)
+        $classes = Taxonomy::where('type', TaxonomyType::SCHOOL_CLASS)
             ->withCount('projects')
             ->orderBy('name')
             ->get();

@@ -68,7 +68,7 @@ class ProjectsTable
                     ]),
                 SelectFilter::make('taxonomies')
                     ->label('Ročník')
-                    ->relationship('taxonomies', 'name', fn ($query) => $query->where('type', TaxonomyType::Year))
+                    ->relationship('taxonomies', 'name', fn ($query) => $query->where('type', TaxonomyType::YEAR))
                     ->preload()
                     ->multiple(),
                 SelectFilter::make('project_types')
@@ -78,7 +78,7 @@ class ProjectsTable
                     ->multiple(),
                 SelectFilter::make('work_types')
                     ->label('Typ práce')
-                    ->relationship('taxonomies', 'name', fn ($query) => $query->where('type', TaxonomyType::WorkType))
+                    ->relationship('taxonomies', 'name', fn ($query) => $query->where('type', TaxonomyType::WORK_TYPE))
                     ->preload()
                     ->multiple(),
             ])

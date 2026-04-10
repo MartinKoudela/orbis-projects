@@ -12,7 +12,7 @@ class CreateWorkType extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['type'] = TaxonomyType::WorkType;
+        $data['type'] = TaxonomyType::WORK_TYPE;
         return $data;
     }
 

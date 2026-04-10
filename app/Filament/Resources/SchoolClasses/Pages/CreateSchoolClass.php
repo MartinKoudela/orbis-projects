@@ -12,7 +12,7 @@ class CreateSchoolClass extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['type'] = TaxonomyType::SchoolClass;
+        $data['type'] = TaxonomyType::SCHOOL_CLASS;
         return $data;
     }
 

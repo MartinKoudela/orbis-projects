@@ -4,22 +4,22 @@ namespace App\Enums;
 
 enum LinkType: string
 {
-    case GitHub = 'github';
-    case Website = 'website';
-    case AppStore = 'appstore';
-    case GooglePlay = 'googleplay';
-    case Video = 'video';
-    case Other = 'other';
+    case GITHUB = 'github';
+    case WEBSITE = 'website';
+    case APP_STORE = 'appstore';
+    case GOOGLE_PLAY = 'googleplay';
+    case VIDEO = 'video';
+    case OTHER = 'other';
 
     public function label(): string
     {
         return match ($this) {
-            self::GitHub => 'GitHub',
-            self::Website => 'Web',
-            self::AppStore => 'App Store',
-            self::GooglePlay => 'Google Play',
-            self::Video => 'Video',
-            self::Other => 'Ostatní',
+            self::GITHUB => 'GitHub',
+            self::WEBSITE => 'Web',
+            self::APP_STORE => 'App Store',
+            self::GOOGLE_PLAY => 'Google Play',
+            self::VIDEO => 'Video',
+            self::OTHER => 'Ostatní',
         };
     }
 }

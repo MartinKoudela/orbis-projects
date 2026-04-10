@@ -36,7 +36,7 @@ class YearResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('type', TaxonomyType::Year);
+        return parent::getEloquentQuery()->where('type', TaxonomyType::YEAR);
     }
 
     public static function form(Schema $schema): Schema

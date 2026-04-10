@@ -36,7 +36,7 @@ class SchoolClassResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('type', TaxonomyType::SchoolClass);
+        return parent::getEloquentQuery()->where('type', TaxonomyType::SCHOOL_CLASS);
     }
 
     public static function form(Schema $schema): Schema
