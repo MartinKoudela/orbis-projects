@@ -11,12 +11,14 @@
   <img src="https://img.shields.io/badge/Spatie%20Media%20Library-11.x-ef4444?style=flat" alt="Spatie Media Library">
   <img src="https://img.shields.io/badge/Tailwind%20CSS-4.x-38bdf8?style=flat&logo=tailwindcss" alt="Tailwind CSS">
   <img src="https://img.shields.io/badge/Vite-8.x-646cff?style=flat&logo=vite" alt="Vite">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat" alt="License">
+<img src="https://img.shields.io/badge/License-PolyForm%20NC%201.0-blue?style=flat" alt="License">
 </p>
 
 # ORBIS — Studentské projekty
 
-Webová platforma pro prezentaci studentských projektů školy [ORBIS Zlín](https://orbiszlin.cz). Systém spravuje databázi projektů, jejich taxonomii a média. Každý student navíc vytváří vlastní vizuální šablonu v Blade/PHP — **design je zcela na něm**, funkčnost zajišťuje platforma.
+Webová platforma pro prezentaci studentských projektů školy [ORBIS Zlín](https://orbiszlin.cz). Systém spravuje databázi
+projektů, jejich taxonomii a média. Každý student navíc vytváří vlastní vizuální šablonu v Blade/PHP — **design je zcela
+na něm**, funkčnost zajišťuje platforma.
 
 ---
 
@@ -32,7 +34,8 @@ Webová platforma pro prezentaci studentských projektů školy [ORBIS Zlín](ht
 
 ## Rychlý start pro studenta
 
-Tento postup tě provede vytvořením vlastní šablony od začátku do konce. Platforma už běží a data jsou připravena — ty pouze vytváříš design.
+Tento postup tě provede vytvořením vlastní šablony od začátku do konce. Platforma už běží a data jsou připravena — ty
+pouze vytváříš design.
 
 **Krok 1 — Zkopíruj výchozí šablonu**
 
@@ -45,10 +48,10 @@ Složku pojmenuj podle sebe — bez diakritiky, malými písmeny, slova odděl p
 **Krok 2 — Přepiš .env**
 
 V souboru .env přepiš:
+
 ```env
 ACTIVE_AUTHOR=template // přepiš na název šablony
 ```
-
 
 **Krok 3 — Vytvoř soubor s metadaty**
 
@@ -65,7 +68,8 @@ Bez tohoto souboru šablona funguje, ale nebude viditelná v přepínači témat
 
 **Krok 4 — Uprav `index.blade.php`**
 
-Otevři `resources/views/themes/jmeno-prijmeni/index.blade.php` a uprav design dle vlastní fantazie. Celý obsah musí být uvnitř `<x-layout>`:
+Otevři `resources/views/themes/jmeno-prijmeni/index.blade.php` a uprav design dle vlastní fantazie. Celý obsah musí být
+uvnitř `<x-layout>`:
 
 ```blade
 <x-layout>
@@ -81,17 +85,21 @@ Otevři `resources/views/themes/jmeno-prijmeni/index.blade.php` a uprav design d
 </x-layout>
 ```
 
-Šablona musí zobrazovat všechny projekty, obsahovat filtry (rok, třída, typ projektu, typ práce) a odkaz na [orbiszlin.cz](https://orbiszlin.cz). Viz sekci [Dostupné proměnné](#dostupné-proměnné).
+Šablona musí zobrazovat všechny projekty, obsahovat filtry (rok, třída, typ projektu, typ práce) a odkaz
+na [orbiszlin.cz](https://orbiszlin.cz). Viz sekci [Dostupné proměnné](#dostupné-proměnné).
 
 **Krok 5a — Uprav `detail.blade.php`** *(klasický přístup)*
 
-Projekt se otevře na samostatné stránce `/themes/jmeno-prijmeni/project/{slug}`. Dostaneš proměnnou `$project` se stejnou strukturou jako položka v `$projects`.
+Projekt se otevře na samostatné stránce `/themes/jmeno-prijmeni/project/{slug}`. Dostaneš proměnnou `$project` se
+stejnou strukturou jako položka v `$projects`.
 
 **Krok 5b — Nebo zvol vlastní řešení** *(modal, overlay, inline rozbalení...)*
 
-Místo samostatné stránky můžeš detail zobrazit libovolně přímo na stránce se seznamem — vyskakovací okno, rozbalení karty apod. Data si načteš JavaScriptem z `/api/projects/{slug}`. V takovém případě `detail.blade.php` nepotřebuješ.
+Místo samostatné stránky můžeš detail zobrazit libovolně přímo na stránce se seznamem — vyskakovací okno, rozbalení
+karty apod. Data si načteš JavaScriptem z `/api/projects/{slug}`. V takovém případě `detail.blade.php` nepotřebuješ.
 
-> Ať zvolíš jakýkoliv přístup, **každý projekt musí jít nějak rozbalit / zobrazit celý detail** — to je povinná součást šablony.
+> Ať zvolíš jakýkoliv přístup, **každý projekt musí jít nějak rozbalit / zobrazit celý detail** — to je povinná součást
+> šablony.
 
 **Krok 6 — Otevři v prohlížeči**
 
@@ -113,7 +121,8 @@ http://orbis-projects.test/themes/jmeno-prijmeni
 
 ## Dokumentace projektu
 
-Následující sekce popisují strukturu dat, dostupné proměnné a API. Užitečné pro každého, kdo chce lépe pochopit jak platforma funguje, nebo implementovat vlastní řešení detailu přes JavaScript.
+Následující sekce popisují strukturu dat, dostupné proměnné a API. Užitečné pro každého, kdo chce lépe pochopit jak
+platforma funguje, nebo implementovat vlastní řešení detailu přes JavaScript.
 
 Chceš projekt rozjet lokálně? Viz [SETUP.md](SETUP.md).
 
@@ -164,7 +173,8 @@ Příklad výpisu v Blade:
 @endforeach
 ```
 
-> `request()->segment(2)` zajišťuje správný odkaz ať je šablona otevřena přes `/themes/jmeno-prijmeni` nebo přes `/` (aktivní téma).
+> `request()->segment(2)` zajišťuje správný odkaz ať je šablona otevřena přes `/themes/jmeno-prijmeni` nebo přes `/` (
+> aktivní téma).
 
 #### `$taxonomies` — taxonomie seskupené podle typu
 
@@ -190,7 +200,8 @@ Příklad filtrovacího selectu:
 </select>
 ```
 
-Filtr se aplikuje odesláním formuláře metodou `GET`. Akci formuláře nastav dynamicky, aby fungovala pro obě URL (`/` i `/themes/jmeno-prijmeni`):
+Filtr se aplikuje odesláním formuláře metodou `GET`. Akci formuláře nastav dynamicky, aby fungovala pro obě URL (`/` i
+`/themes/jmeno-prijmeni`):
 
 ```blade
 <form method="GET" action="{{ request()->segment(2) ? url('/themes/' . request()->segment(2)) : url('/') }}">
@@ -216,12 +227,12 @@ Vrátí seznam publikovaných projektů.
 
 **Query parametry (filtrování):**
 
-| Parametr | Typ | Popis |
-|---|---|---|
-| `year` | string (slug) | Filtr podle ročníku |
+| Parametr       | Typ           | Popis                     |
+|----------------|---------------|---------------------------|
+| `year`         | string (slug) | Filtr podle ročníku       |
 | `project_type` | string (slug) | Filtr podle typu projektu |
-| `work_type` | string (slug) | Filtr podle typu práce |
-| `school_class` | string (slug) | Filtr podle třídy |
+| `work_type`    | string (slug) | Filtr podle typu práce    |
+| `school_class` | string (slug) | Filtr podle třídy         |
 
 ```
 GET /api/projects?year=2025&project_type=webova-aplikace
@@ -250,7 +261,11 @@ Vrátí detail jednoho projektu. Užitečné při implementaci vlastního detail
         "email": "jan.novak@skola.cz"
     },
     "links": [
-        { "type": "github", "url": "https://github.com/...", "label": "GitHub" }
+        {
+            "type": "github",
+            "url": "https://github.com/...",
+            "label": "GitHub"
+        }
     ],
     "published_at": "2025-04-01T12:00:00Z"
 }
