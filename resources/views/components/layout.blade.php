@@ -54,7 +54,12 @@
 
         <div class="flex items-center gap-6">
 
-            <span class="text-slate-500">design: &nbsp;&nbsp;{{ config('app.active_author', '') }}</span>
+            @php
+                $themeAuthor = request()->route('author') ?? config('app.active_author');
+                $metaFile = public_path('themes/' . $themeAuthor . '/meta.json');
+                $designAuthor = file_exists($metaFile) ? (json_decode(file_get_contents($metaFile), true)['author'] ?? '') : '';
+            @endphp
+            <span class="text-slate-500">design: &nbsp;&nbsp;{{ $designAuthor }}</span>
             <span class="flex items-center gap-1">
         <span class="text-slate-500">systém:</span>
         <a href="https://martinkoudela.com" class="inline-flex items-center gap-1 transition text-[#01a0e2] hover:text-[#008fc9] animate-pulse">
