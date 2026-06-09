@@ -106,7 +106,7 @@ karty apod. Data si načteš JavaScriptem z `/api/projects/{slug}`. V takovém p
 Tvoje šablona je dostupná na:
 
 ```
-http://orbis-projects.test/themes/jmeno-prijmeni
+http://localhost/themes/jmeno-prijmeni
 ```
 
 ### Hotovo — co musí šablona splňovat
